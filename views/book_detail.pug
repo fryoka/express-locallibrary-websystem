@@ -3,7 +3,7 @@ extends layout
 block content
   h1 Title: !{book.title}
 
-  p #[strong Author: ]
+  p #[strong 著者: ]
     a(href=book.author.url) #{book.author.name}
   p #[strong Summary:] !{book.summary}
   p #[strong ISBN:] #{book.isbn}
@@ -14,7 +14,7 @@ block content
         |,&nbsp;
 
   div(style='margin-left:20px;margin-top:20px')
-    h2(style='font-size: 1.5rem;') Copies
+    h2(style='font-size: 1.5rem;') コピー
 
     each val in book_instances
       hr
@@ -35,6 +35,6 @@ block content
 
   hr
   p
-    a(href=book.url+'/delete') Delete Book
+    a(href=book.url+'/delete') 本を消去する
   p
-    a(href=book.url+'/update') Update Book
+    a(href=book.url+'/update') 更新する
