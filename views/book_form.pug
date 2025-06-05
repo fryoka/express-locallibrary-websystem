@@ -6,7 +6,7 @@ block content
   form(method='POST')
     div.form-group
       label(for='title') タイトル:
-      input#title.form-control(type='text', placeholder='Name of book' name='title' required value=(undefined===book ? '' : book.title) )
+      input#title.form-control(type='text', placeholder='本の名前' name='title' required value=(undefined===book ? '' : book.title) )
     div.form-group
       label(for='author') 著者:
       select#author.form-control(name='author' required)
@@ -21,12 +21,12 @@ block content
             option(value=author._id) #{author.name}
     div.form-group
       label(for='summary') 概要:
-      textarea#summary.form-control(placeholder='Summary' name='summary' required)= undefined===book ? '' : book.summary
+      textarea#summary.form-control(placeholder='概要' name='summary' required)= undefined===book ? '' : book.summary
     div.form-group
       label(for='isbn') ISBN:
       input#isbn.form-control(type='text', placeholder='ISBN13' name='isbn' value=(undefined===book ? '' : book.isbn) required)
     div.form-group
-      label Genre:
+      label ジャンル:
       div
         for genre in genres
           div(style='display: inline; padding-right:10px;')

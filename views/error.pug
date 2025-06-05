@@ -4,3 +4,8 @@ block content
   h1= message
   h2= error.status
   pre #{error.stack}
+
+  //- 日本語訳
+  h1 エラーメッセージ: #{message}
+  h2 ステータスコード: #{error.status}
+  pre スタックトレース: #{error.stack}

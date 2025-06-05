@@ -1,5 +1,33 @@
 .sidebar-nav {
-  margin-top: 20px;
+  margin-top: 30px;
   padding: 0;
   list-style: none;
+  background: #f5f3e7;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(60, 50, 30, 0.08);
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+}
+
+.sidebar-nav li {
+  border-bottom: 1px solid #e0dbc8;
+}
+
+.sidebar-nav li:last-child {
+  border-bottom: none;
+}
+
+.sidebar-nav a {
+  display: block;
+  padding: 14px 22px;
+  color: #4b3f2f;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.sidebar-nav a:hover {
+  background: #e8e3d3;
+  color: #7c5e3c;
+  font-weight: bold;
 }

@@ -8,7 +8,7 @@ const asyncHandler = require("express-async-handler");
 exports.author_list = asyncHandler(async (req, res, next) => {
   const allAuthors = await Author.find().sort({ family_name: 1 }).exec();
   res.render("author_list", {
-    title: "Author List",
+    title: "著者一覧",
     author_list: allAuthors,
   });
 });
@@ -29,7 +29,7 @@ exports.author_detail = asyncHandler(async (req, res, next) => {
   }
 
   res.render("author_detail", {
-    title: "Author Detail",
+    title: "著者の詳細",
     author: author,
     author_books: allBooksByAuthor,
   });
@@ -37,7 +37,7 @@ exports.author_detail = asyncHandler(async (req, res, next) => {
 
 // Display Author create form on GET.
 exports.author_create_get = (req, res, next) => {
-  res.render("author_form", { title: "Create Author" });
+  res.render("author_form", { title: "著者の追加" });
 };
 
 // Handle Author create on POST.
@@ -82,7 +82,7 @@ exports.author_create_post = [
     if (!errors.isEmpty()) {
       // There are errors. Render form again with sanitized values/errors messages.
       res.render("author_form", {
-        title: "Create Author",
+        title: "著者の追加",
         author: author,
         errors: errors.array(),
       });
@@ -112,7 +112,7 @@ exports.author_delete_get = asyncHandler(async (req, res, next) => {
   }
 
   res.render("author_delete", {
-    title: "Delete Author",
+    title: "著者の削除",
     author: author,
     author_books: allBooksByAuthor,
   });
@@ -129,7 +129,7 @@ exports.author_delete_post = asyncHandler(async (req, res, next) => {
   if (allBooksByAuthor.length > 0) {
     // Author has books. Render in same way as for GET route.
     res.render("author_delete", {
-      title: "Delete Author",
+      title: "著者の削除",
       author: author,
       author_books: allBooksByAuthor,
     });
@@ -197,7 +197,7 @@ exports.author_update_post = [
     if (!errors.isEmpty()) {
       // There are errors. Render the form again with sanitized values and error messages.
       res.render("author_form", {
-        title: "Update Author",
+        title: "著者の更新",
         author: author,
         errors: errors.array(),
       });
