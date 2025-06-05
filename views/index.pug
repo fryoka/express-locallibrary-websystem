@@ -2,14 +2,14 @@ extends layout
 
 block content
   h1= title
-  p ようこそ #[em 地域図書館へ] Mozilla Developer Networkのチュートリアル例として開発された、とても基本的なウェブサイトです
+  p ようこそ #[em ローカルライブラリ] へ。このサイトは Mozilla Developer Network チュートリアルの例として開発された、とても基本的なウェブサイトです。
 
-  h1 コンテンツ
-  p この図書館には以下のものが登録されています。
+  h1 目次
+  p この図書館に登録されている項目は以下の通りです。
 
   ul
     li #[strong 本:] !{book_count}
-    li #[strong コピー:] !{book_instance_count}
-    li #[strong 利用可能なコピー:] !{book_instance_available_count}
+    li #[strong 複本:] !{book_instance_count}
+    li #[strong 利用可能な複本:] !{book_instance_available_count}
     li #[strong 著者:] !{author_count}
     li #[strong ジャンル:] !{genre_count}

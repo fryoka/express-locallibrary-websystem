@@ -39,7 +39,7 @@ exports.book_list = asyncHandler(async (req, res, next) => {
     .populate("author")
     .exec();
 
-  res.render("book_list", { title: "Book List", book_list: allBooks });
+  res.render("book_list", { title: "本一覧", book_list: allBooks });
 });
 
 // Display detail page for a specific book.
@@ -73,7 +73,7 @@ exports.book_create_get = asyncHandler(async (req, res, next) => {
   ]);
 
   res.render("book_form", {
-    title: "Create Book",
+    title: "本の追加",
     authors: allAuthors,
     genres: allGenres,
   });
@@ -136,7 +136,7 @@ exports.book_create_post = [
         }
       }
       res.render("book_form", {
-        title: "Create Book",
+        title: "本の追加",
         authors: allAuthors,
         genres: allGenres,
         book: book,
@@ -163,7 +163,7 @@ exports.book_delete_get = asyncHandler(async (req, res, next) => {
   }
 
   res.render("book_delete", {
-    title: "Delete Book",
+    title: "本の削除",
     book: book,
     book_instances: bookInstances,
   });
@@ -186,7 +186,7 @@ exports.book_delete_post = asyncHandler(async (req, res, next) => {
   if (bookInstances.length > 0) {
     // Book has book_instances. Render in same way as for GET route.
     res.render("book_delete", {
-      title: "Delete Book",
+      title: "本の削除",
       book: book,
       book_instances: bookInstances,
     });
@@ -220,7 +220,7 @@ exports.book_update_get = asyncHandler(async (req, res, next) => {
   });
 
   res.render("book_form", {
-    title: "Update Book",
+    title: "本の更新",
     authors: allAuthors,
     genres: allGenres,
     book: book,
@@ -285,7 +285,7 @@ exports.book_update_post = [
         }
       }
       res.render("book_form", {
-        title: "Update Book",
+        title: "本の更新",
         authors: allAuthors,
         genres: allGenres,
         book: book,
